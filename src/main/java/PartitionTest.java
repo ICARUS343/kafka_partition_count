@@ -35,17 +35,17 @@ public class PartitionTest {
         final Producer<Long, String> producer = createProducer();
 
         for (long i = 0; i< num; i++){
-            long  a = i;
+
             final ProducerRecord<Long, String> record =
-                    new ProducerRecord<>(TOPIC,i-a+1,
+                    new ProducerRecord<>(TOPIC,i,
                             "Record num:c " + i);
 
             RecordMetadata metadata = producer.send(record).get();
 
-           /* System.out.printf("sent record(key=%s value=%s) " +
+            System.out.printf("sent record(key=%s value=%s) " +
                             "meta(partition=%d, offset=%d)\n",
                     record.key(), record.value(), metadata.partition(),
-                    metadata.offset());*/
+                    metadata.offset());
 
         }
         producer.flush();
@@ -84,9 +84,9 @@ public class PartitionTest {
 
             consumerRecords.forEach(record -> {
 
-               /* System.out.printf("Consumer Record Received:(%d, %s, %d, %d)\n",
+                System.out.printf("Consumer Record Received:(%d, %s, %d, %d)\n",
                         record.key(), record.value(),
-                        record.partition(), record.offset());*/
+                        record.partition(), record.offset());
                 int partition = record.partition();
                 if (partitionCounter.containsKey(partition)) {
                     partitionCounter.put(partition, partitionCounter.get(partition) + 1);

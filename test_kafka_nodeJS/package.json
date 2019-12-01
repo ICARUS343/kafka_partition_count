@@ -1,0 +1,17 @@
+{
+  "name": "test_kafka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Praphul Shivakoti",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "kafka-node": "^5.0.0",
+    "optimist": "^0.6.1"
+  }
+}
