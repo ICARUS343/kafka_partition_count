@@ -1,4 +1,4 @@
-# kafka_partitionCount
+# kafka_partition_count
 Observing partitions in kafka
 # <h3>kafka</h3>
 <li>
